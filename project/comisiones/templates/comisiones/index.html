@@ -41,7 +41,11 @@
                             <td>{{ comision.nombre }}</td>
                             <td>{{ comision.curso }}</td>
                             <td>{{ comision.profesor }}</td>
-                            <td>{{ comision.estudiante }}</td>
+                            <td>
+                                {% for estudiante in comision.estudiante.all %}
+                                <p>{{estudiante.nombre}}</p>
+                                {% endfor %}
+                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>
