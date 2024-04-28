@@ -1,13 +1,44 @@
 {% extends 'core/base.html' %}
-
+{% load static %}
 {% block titulo %}
-    <h1>Pagina Inicial</h1>
+    {% include 'core/components/titulo1.html' with titulo="App Coder" %}
 {% endblock titulo %}
-
 {% block contenido %}
-    <ul>
-        <li>
-            <a href="{% url 'cursos:home' %}">Home</a>
-        </li>
-    </ul>
+    <!-- Heading Row-->
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-5">
+            <img class="img-fluid rounded mb-4 mb-lg-0"
+                 src="{% static 'core/img/brucco_img1_conv.webp' %}"
+                 alt="Home Page" width="100%"/>
+        </div>
+        <div class="col-lg-7" >
+            <h2 class="font-weight-light">Bienvenido Brucco Informática:</h2>
+            <h3 class="font-weight-light">Donde la Innovación y el Conocimiento Convergen</h3>
+
+            <p>
+                Abrazamos el futuro con cada línea de código y cada algoritmo que creamos. Somos una comunidad apasionada de mentes creativas y visionarias, dedicadas a impulsar los límites de la tecnología y la informática.
+                Únete a nosotros en el Instituto de Informática Brucco, donde el futuro de la tecnología se escribe hoy. ¡Bienvenido a la vanguardia de la innovación informática!
+            </p>
+
+            <a class="btn btn-primary"                            
+               href="https://wa.me/541130305683"
+               target="_blank">WhatsApp</a>
+        </div>
+    </div>
+    <!-- Call to Action
+    <div class="card text-white bg-secondary my-5 py-4 text-center">
+        <div class="card-body">
+            <p class="text-white m-0">
+                This call to action card is a great place to showcase some important information or display a clever tagline!
+            </p>
+        </div>
+    </div>
+    -->
+
+    <!-- Content Row-->
+    <div class="row gx-4 gx-lg-5">
+        {% include 'core/components/card.html' with titulo="Tarjeta 1" texto="Promociones" %}
+        {% include 'core/components/card.html' with titulo="Tarjeta 2" texto="Lorem ipsum dolor sit amet consectetur adipisicing elit. In perferendis repellat quo earum ut, ducimus repudiandae maxime eaque sint, omnis placeat ex necessitatibus rerum dicta itaque dolorem consequatur deleniti praesentium?" %}
+        {% include 'core/components/card.html' with titulo="Tarjeta 3" %}
+    </div>
 {% endblock contenido %}
