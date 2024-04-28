@@ -23,11 +23,7 @@
     <!-- Heading Row-->
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
         <div class="col-lg-5">
-            <h3 class="font-weight-light">
-                <ul>
-                    {% for estudiante in estudiantes %}<li>{{ Estudiante.nombre }}</li>{% endfor %}
-                </ul>
-            </h3>
+           
         </div>
         <div class="col-lg-7">
             <h3 class="font-weight-light">Buscador de Estudiantes:</h3>
@@ -39,7 +35,7 @@
                 </form>
             </div>
             <ul>
-                {% for estudiante in Estudiantes %}<li>{{ estudiante }}</li>{% endfor %}
+                {% for Estudiante in estudiantes %}<li>{{ Estudiante }}</li>{% endfor %}
             </ul>
         </div>
     </div>
