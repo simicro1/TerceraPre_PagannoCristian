@@ -8,19 +8,16 @@
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
         <div class="col-lg-5">
             <img class="img-fluid rounded mb-4 mb-lg-0"
-                 src="{% static 'core/img/cursos.webp' %}"
+                 src="{% static 'core/img/estudiantes.webp' %}"
                  alt="Home Page"
                  width="100%" />
         </div>
         <div class="col-lg-7">
-            <h2 class="font-weight-light">Nuestros Cursos:</h2>
+            <h2 class="font-weight-light">Estudiantes:</h2>
             <h3 class="font-weight-light"></h3>
             <p>
-                Explora nuestra amplia selección de cursos, aprende a tu propio ritmo con acceso ilimitado a recursos de aprendizaje de alta calidad y obtén certificados de finalización reconocidos que destacarán en tu currículum. Da el siguiente paso en tu camino hacia el éxito profesional con nuestros cursos. ¡Inscríbete hoy y comienza a alcanzar tus metas!
+                Ya seas un estudiante de secundaria ansioso por explorar nuevas áreas de conocimiento, un universitario en busca de complementar tu formación académica, o un profesional en busca de desarrollo profesional, aquí encontrarás un espacio donde tu sed de conocimiento será saciada.
             </p>
-            <a class="btn btn-primary"
-               href="https://wa.me/541130305683"
-               target="_blank">WhatsApp</a>
         </div>
     </div>
     <!-- Heading Row-->
@@ -28,25 +25,26 @@
         <div class="col-lg-5">
             <h3 class="font-weight-light">
                 <ul>
-                    {% for comision in comisiones %}<li>{{ comision.curso }}</li>{% endfor %}
+                    {% for comision in comisiones %}
+                        {% if comision.estudiante %}
+                            <li>{{ comision.estudiante }}</li>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
             </h3>
         </div>
         <div class="col-lg-7">
-            <h3 class="font-weight-light">Buscador de Cursos:</h3>
-
+            <h3 class="font-weight-light">Buscador de Estudiantes:</h3>
             <div class="py-lg-4 ">
-                <form action="{% url 'cursos:home' %}" method="get">
+                <form action="{% url 'estudiantes:home' %}" method="get" class="d-flex">
                     <input type="text" name="consulta" placeholder="Buscar..." class="form-control me-2">
-                    <p></p>
                     <button type="submit" class="btn btn-primary me-2">Buscar</button>
                     <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Cancelar</button>
                 </form>
             </div>
             <ul>
-                {% for curso in cursos %}<li>{{ curso }}</li>{% endfor %}
+                {% for estudiante in Estudiantes %}<li>{{ estudiante }}</li>{% endfor %}
             </ul>
-           
         </div>
     </div>
 {% endblock contenido %}

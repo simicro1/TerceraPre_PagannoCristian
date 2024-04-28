@@ -9,18 +9,17 @@
         <div class="col-lg-5">
             <img class="img-fluid rounded mb-4 mb-lg-0"
                  src="{% static 'core/img/brucco_img1_conv.webp' %}"
-                 alt="Home Page" width="100%"/>
+                 alt="Home Page"
+                 width="100%" />
         </div>
-        <div class="col-lg-7" >
+        <div class="col-lg-7">
             <h2 class="font-weight-light">Bienvenido Brucco Informática:</h2>
             <h3 class="font-weight-light">Donde la Innovación y el Conocimiento Convergen</h3>
-
             <p>
                 Abrazamos el futuro con cada línea de código y cada algoritmo que creamos. Somos una comunidad apasionada de mentes creativas y visionarias, dedicadas a impulsar los límites de la tecnología y la informática.
                 Únete a nosotros en el Instituto de Informática Brucco, donde el futuro de la tecnología se escribe hoy. ¡Bienvenido a la vanguardia de la innovación informática!
             </p>
-
-            <a class="btn btn-primary"                            
+            <a class="btn btn-primary"
                href="https://wa.me/541130305683"
                target="_blank">WhatsApp</a>
         </div>
@@ -33,12 +32,11 @@
             </p>
         </div>
     </div>
-    -->
-
+-->
     <!-- Content Row-->
     <div class="row gx-4 gx-lg-5">
-        {% include 'core/components/card.html' with titulo="Tarjeta 1" texto="Promociones" %}
-        {% include 'core/components/card.html' with titulo="Tarjeta 2" texto="Lorem ipsum dolor sit amet consectetur adipisicing elit. In perferendis repellat quo earum ut, ducimus repudiandae maxime eaque sint, omnis placeat ex necessitatibus rerum dicta itaque dolorem consequatur deleniti praesentium?" %}
-        {% include 'core/components/card.html' with titulo="Tarjeta 3" %}
+        {% include 'core/components/card.html' with titulo="Cursos" texto="Explora nuestra amplia selección de cursos, aprende a tu propio ritmo con acceso ilimitado a recursos de aprendizaje de alta calidad y obtén certificados de finalización reconocidos que destacarán en tu currículum. Da el siguiente paso en tu camino hacia el éxito profesional con nuestros cursos. ¡Inscríbete hoy y comienza a alcanzar tus metas!" %}
+        {% include 'core/components/card.html' with titulo="Estudiantes" texto="En nuestra plataforma, no importa tu edad, tu nivel de experiencia o tus antecedentes educativos. Nos dirigimos a todos aquellos que tienen un deseo ardiente de aprender, crecer y alcanzar sus objetivos. Ya seas un estudiante de secundaria ansioso por explorar nuevas áreas de conocimiento, un universitario en busca de complementar tu formación académica, o un profesional en busca de desarrollo profesional, aquí encontrarás un espacio donde tu sed de conocimiento será saciada." %}
+        {% include 'core/components/card.html' with titulo="Profesores" texto="Además de su experiencia académica y profesional, nuestros profesores se distinguen por su enfoque personalizado y su capacidad para inspirar y motivar a los estudiantes a alcanzar su máximo potencial. Ya sea a través de clases interactivas, tutoriales prácticos o sesiones de asesoramiento individualizado, nuestros profesores están aquí para ayudarte a alcanzar tus metas educativas y profesionales." %}
     </div>
 {% endblock contenido %}
