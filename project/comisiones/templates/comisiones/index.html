@@ -14,12 +14,42 @@
     <!-- Heading Row-->
     <div class="row gx-4 gx-lg-12 align-items-center my-5">
         <div class="col-lg-12">
-            <h1>Detalles de la Comisiones Abiertas</h1>
-            <ul>                <ul>
-                {% for comision in comisiones %}
-                    <li>{{ comision.nombre }} | {{ comision.curso }} | {{ comision.profesor }}  | {{ comision.estudiante }}</li>
-                {% endfor %}
-            </ul>
+            <div class="col-lg-7">
+                <h3 class="font-weight-light">Buscador de Comisiones:</h3>
+                <div class="py-lg-4 ">
+                    <form action="{% url 'cursos:home' %}" method="get">
+                        <input type="text"
+                               name="consulta"
+                               placeholder="Buscar..."
+                               class="form-control me-2">
+                        <p></p>
+                        <button type="submit" class="btn btn-primary me-2">Buscar</button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Cancelar</button>
+                    </form>
+                </div>
+               
+            </div>
+            <h3>Detalle de Comisiones Abiertas</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 150px; background-color: #282828; color: #ffffff;">Comision</th>
+                        <th style="width: 150px; background-color: #282828; color: #ffffff;">Curso</th>
+                        <th style="width: 200px; background-color: #282828; color: #ffffff;">Profesor</th>
+                        <th style="width: 200px; background-color: #282828; color: #ffffff;">Estudiante</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for comision in comisiones %}
+                        <tr>
+                            <td>{{ comision.nombre }}</td>
+                            <td>{{ comision.curso }}</td>
+                            <td>{{ comision.profesor }}</td>
+                            <td>{{ comision.estudiante }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 {% endblock contenido %}
