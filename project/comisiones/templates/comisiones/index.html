@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block titulo %}
+    {% include 'core/components/titulo1.html' with titulo="App Coder" %}
+{% endblock titulo %}
+{% block contenido %}
+    <!-- Heading Row-->
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-5">
+            
+        </div>
+        
+    </div>
+    <!-- Heading Row-->
+    <div class="row gx-4 gx-lg-12 align-items-center my-5">
+        <div class="col-lg-12">
+            <h1>Detalles de la Comisiones Abiertas</h1>
+            <ul>                <ul>
+                {% for comision in comisiones %}
+                    <li>{{ comision.nombre }} | {{ comision.curso }} | {{ comision.profesor }}  | {{ comision.estudiante }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock contenido %}
