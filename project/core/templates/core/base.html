@@ -18,6 +18,17 @@
               href="{% static 'core/assets/favicon.ico' %}" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'core/css/styles.css' %}" rel="stylesheet" />
+        <style>
+            /* Add a bottom border to all table rows */
+            table tr {
+                border-bottom: 1px solid black;
+            }
+        
+            /* Optional: Add a border to the last row to avoid extra line at the end */
+            table tr:last-child {
+                border-bottom: none;
+            }
+        </style>
     </head>
     <body>
         <!-- Responsive navbar-->
