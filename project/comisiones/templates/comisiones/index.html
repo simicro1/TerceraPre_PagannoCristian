@@ -21,10 +21,9 @@
                                class="form-control me-2">
                         <p></p>
                         <button type="submit" class="btn btn-primary me-2">Buscar</button>
-                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Cancelar</button>
+                        <button type="button" class="btn btn-secondary me-2" onclick="this.form.reset();">Cancelar</button>
+                        <a class="btn btn-success" href="{% url 'comisiones:create' %}">Crear</a>
                     </form>
-
-
                 </div>
             </div>
             <h3>Detalle de Comisiones Abiertas</h3>
@@ -35,6 +34,7 @@
                         <th style="width: 150px; background-color: #282828; color: #ffffff;">Curso</th>
                         <th style="width: 200px; background-color: #282828; color: #ffffff;">Profesor</th>
                         <th style="width: 200px; background-color: #282828; color: #ffffff;">Estudiante</th>
+                        <th style="width: 300px; background-color: #282828; color: #ffffff;">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,6 +47,14 @@
                                 {% for estudiante in comision.estudiante.all %}
                                 <p>{{estudiante.nombre}}</p>
                                 {% endfor %}
+                            </td>
+                            <td>
+                                <a class="btn btn-info btn-sm me-1"
+                                   href="{% url 'comisiones:detail' comision.id %}">Detalle</a>
+                                <a class="btn btn-warning btn-sm me-1"
+                                   href="{% url 'comisiones:update' comision.id %}">Cambiar</a>
+                                <a class="btn btn-danger btn-sm"
+                                   href="{% url 'comisiones:delete' comision.id %}">Borrar</a>
                             </td>
                         </tr>
                     {% endfor %}

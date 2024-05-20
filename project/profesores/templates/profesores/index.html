@@ -32,12 +32,33 @@
                            placeholder="Buscar..."
                            class="form-control me-2">
                     <button type="submit" class="btn btn-primary me-2">Buscar</button>
-                    <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Cancelar</button>
+                    <button type="button" class="btn btn-secondary me-2" onclick="this.form.reset();">Cancelar</button>
+                    <a class="btn btn-success" href="{% url 'profesores:create' %}">Crear</a>
                 </form>
             </div>
-            <ul>
-                {% for profesor in profesores %}<li>{{ profesor }}</li>{% endfor %}
-            </ul>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Profesor</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for profesor in profesores %}
+                        <tr>
+                            <td>{{ profesor.nombre }}</td>
+                            <td>
+                                <a class="btn btn-info btn-sm me-1"
+                                   href="{% url 'profesores:detail' profesor.id %}">Detalle</a>
+                                <a class="btn btn-warning btn-sm me-1"
+                                   href="{% url 'profesores:update' profesor.id %}">Cambiar</a>
+                                <a class="btn btn-danger btn-sm"
+                                   href="{% url 'profesores:delete' profesor.id %}">Borrar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 {% endblock contenido %}

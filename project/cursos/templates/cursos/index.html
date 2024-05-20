@@ -42,7 +42,8 @@
                            class="form-control me-2">
                     <p></p>
                     <button type="submit" class="btn btn-primary me-2">Buscar</button>
-                    <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Cancelar</button>
+                    <button type="button" class="btn btn-secondary me-2" onclick="this.form.reset();">Cancelar</button>
+                    <a class="btn btn-success" href="{% url 'cursos:create' %}">Crear</a>
                 </form>
             </div>
             <table class="table table-hover">

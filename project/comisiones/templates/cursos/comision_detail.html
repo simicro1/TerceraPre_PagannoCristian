@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% block titulo %}
+    Comisiones: Detalle de un comision
+{% endblock titulo %}
+
+{% block contenido %}
+
+    <ul>
+        <li>Nombre: {{ object.nombre }}</li>
+        <li>Curso: {{ object.curso }}</li>
+        <li>Profesor: {{ object.profesor }}</li>
+        <li><p>Estudiantes:</p>
+            {% for estudiante in object.estudiante.all %}
+            <p>{{estudiante.nombre}}</p>
+            {% endfor %}
+        </li>
+    </ul>
+
+    <div class="fs-3 pb-4">
+        <a href="{% url 'comisiones:home' %}">Volver</a>
+    </div>
+
+{% endblock contenido %}

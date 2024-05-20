@@ -1,6 +1,6 @@
 {% extends 'core/base.html' %}
 {% block titulo %}
-    Cursos: Detalle de un curso
+    Comisiones: Detalle de un comision
 {% endblock titulo %}
 
 {% block contenido %}
@@ -9,13 +9,13 @@
         <li>Nombre: {{ object.nombre }}</li>
         <li><p>Comision:</p>
             {% for comision in object.comisiones.all %}
-            <p>{{comision.nombre}} - {{comision.profesor}}</p>
+            <p>{{comision.nombre}} - {{comision.curso}}</p>
             {% endfor %}
         </li>
     </ul>
 
     <div class="fs-3 pb-4">
-        <a href="{% url 'cursos:home' %}">Volver</a>
+        <a href="{% url 'estudiantes:home' %}">Volver</a>
     </div>
 
 {% endblock contenido %}

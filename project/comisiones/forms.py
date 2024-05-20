@@ -7,4 +7,7 @@ class ComisionForm(forms.ModelForm):
         fields = "__all__"
         widgets = {
             "nombre": forms.TextInput(attrs={"class": "form-control"}),
+            "curso": forms.Select(attrs={"class": "form-control"}),
+            "profesor": forms.Select(attrs={"class": "form-control"}),
+            "estudiante": forms.SelectMultiple(attrs={"class": "form-control"}),
         }

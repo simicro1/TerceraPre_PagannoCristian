@@ -17,25 +17,40 @@
                        aria-current="page"
                        href="{% url 'core:home' %}">Inicio</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'cursos:home' %}">Cursos</a>
-                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'comisiones:home' %}">Buscar Comisiones</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ABM
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'estudiantes:home' %}">Estudiantes</a></li>
+                            <li><a class="dropdown-item" href="{% url 'profesores:home' %}">Profesores</a></li>
+                            <li >
+                                <a class="dropdown-item" href="{% url 'cursos:home' %}">Cursos</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/project/core/templates/core/about.html">About</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-bg-info">{{ user.username }}</a></li>
+                    <li class="nav-item">
+                        <form action="{% url 'core:logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-dark {{ fontsize }} ">Logout</button>
+                        </form>
+                    </li>
+                {% else %}
+                    <li class="nav-item"><a class="nav-link {% if request.path == "/login/" %} active {% endif %}" href="{% url 'core:login' %}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link {% if request.path == "/register/" %} active {% endif %}" href="{% url 'core:register' %}">Registrarse</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/project/core/templates/core/about.html">About</a>
+                    </li>
+                {% endif %}
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'comisiones:home' %}">Buscar Comisiones</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        ABM
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{% url 'estudiantes:home' %}">Estudiantes</a></li>
-                        <li><a class="dropdown-item" href="{% url 'profesores:home' %}">Profesores</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/project/core/templates/core/about.html">About</a>
-                </li>
             </ul>
         </div>
     </div>

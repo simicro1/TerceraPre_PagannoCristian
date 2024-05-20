@@ -28,3 +28,17 @@ class ComisionCreate(CreateView):
     model = models.Comision
     form_class = forms.ComisionForm
     success_url = reverse_lazy("comisiones:home")
+    
+class ComisionUpdate(UpdateView):
+    model = models.Comision
+    form_class = forms.ComisionForm
+    success_url = reverse_lazy("comisiones:home")
+
+
+class ComisionDetail(DetailView):
+    model = models.Comision
+
+
+class ComisionDelete(LoginRequiredMixin, DeleteView):
+    model = models.Comision
+    success_url = reverse_lazy("comisiones:home")
