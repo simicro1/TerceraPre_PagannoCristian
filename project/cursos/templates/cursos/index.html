@@ -45,9 +45,29 @@
                     <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Cancelar</button>
                 </form>
             </div>
-            <ul>
-                {% for curso in cursos %}<li>{{ curso }}</li>{% endfor %}
-            </ul>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Curso</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for curso in cursos %}
+                        <tr>
+                            <td>{{ curso.nombre }}</td>
+                            <td>
+                                <a class="btn btn-info btn-sm me-1"
+                                   href="{% url 'cursos:detail' curso.id %}">Detalle</a>
+                                <a class="btn btn-warning btn-sm me-1"
+                                   href="{% url 'cursos:update' curso.id %}">Cambiar</a>
+                                <a class="btn btn-danger btn-sm"
+                                   href="{% url 'cursos:delete' curso.id %}">Borrar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 {% endblock contenido %}

@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block titulo %}
+    Curso: 
+    {% if form.instance.pk %}
+        Editar
+    {% else %}
+        Crear
+    {% endif %}
+    Curso
+{% endblock titulo %}
+
+{% block contenido %}
+    
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+    <div class="fs-3 pb-4 text-sm">
+        <a href="{% url 'cursos:home' %}">Volver al inicio de Curso</a>
+    </div>
+
+{% endblock contenido %}

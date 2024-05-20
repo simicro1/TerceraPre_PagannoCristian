@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+{% block titulo %}
+    Cursos: Detalle de un curso
+{% endblock titulo %}
+
+{% block contenido %}
+
+    <ul>
+        <li>Nombre: {{ object.nombre }}</li>
+    </ul>
+
+    <div class="fs-3 pb-4">
+        <a href="{% url 'cursos:home' %}">Volver</a>
+    </div>
+
+{% endblock contenido %}

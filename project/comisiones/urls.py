@@ -6,4 +6,5 @@ app_name = "comisiones"
 
 urlpatterns = [
     path("", views.home, name="home"),
+    path("create/", views.ComisionCreate.as_view(), name="create"),
 ]

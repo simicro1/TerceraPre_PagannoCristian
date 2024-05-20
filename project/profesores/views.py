@@ -11,3 +11,4 @@ def home(request):
         query = models.Profesor.objects.all()
     context = {"profesores" : query}
     return render(request, "profesores/index.html", context)
+

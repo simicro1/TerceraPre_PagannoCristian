@@ -1,9 +1,9 @@
 from django import forms
-from . import models
+from cursos import models
 
-class CursoForm(forms.ModelForm):
+class ComisionForm(forms.ModelForm):
     class Meta:
-        model = models.Curso
+        model = models.Comision
         fields = "__all__"
         widgets = {
             "nombre": forms.TextInput(attrs={"class": "form-control"}),
