@@ -24,4 +24,5 @@ urlpatterns = [
     path("estudiantes/", include("estudiantes.urls")),
     path("profesores/", include("profesores.urls")),
     path("comisiones/", include("comisiones.urls")),
+#    path("about/", include("core.urls")),
 ]

@@ -14,7 +14,7 @@
             <div class="col-lg-7">
                 <h3 class="font-weight-light">Buscador de Comisiones:</h3>
                 <div class="py-lg-4 ">
-                    <form action="{% url 'cursos:home' %}" method="get">
+                    <form action="{% url 'comisiones:home' %}" method="get">
                         <input type="text"
                                name="consulta"
                                placeholder="Buscar..."
@@ -23,6 +23,8 @@
                         <button type="submit" class="btn btn-primary me-2">Buscar</button>
                         <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Cancelar</button>
                     </form>
+
+
                 </div>
             </div>
             <h3>Detalle de Comisiones Abiertas</h3>

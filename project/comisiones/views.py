@@ -1,8 +1,14 @@
-from django.shortcuts import render
-
-from cursos import models
+from django.shortcuts import render, redirect
+from cursos import models, forms
 
 def home(request):
-    query = models.Comision.objects.all()
+    consulta = request.GET.get("consulta", None)
+    
+    if consulta:
+        query = models.Comision.objects.filter(nombre__icontains=consulta)
+    else:
+        query = models.Comision.objects.all()
+    
     context = {"comisiones" : query}
     return render(request, "comisiones/index.html", context)
+
