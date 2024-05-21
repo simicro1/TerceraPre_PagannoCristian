@@ -4,18 +4,19 @@
 {% endblock titulo %}
 
 {% block contenido %}
-
+<p></p>
+<div style="border: 2px solid #000; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center;">  
     <ul>
-        <li>Nombre: {{ object.nombre }}</li>
-        <li><p>Comision:</p>
+        <p><b><u>Nombre del Profesor:</u> {{ object.nombre }}</p></b>
+        <p><p><u>Comisiones Abiertas:</p></u>
             {% for comision in object.comisiones.all %}
             <p>{{comision.nombre}} - {{comision.curso}}</p>
             {% endfor %}
-        </li>
+        </p>
     </ul>
 
     <div class="fs-3 pb-4">
-        <a href="{% url 'profesores:home' %}">Volver</a>
+        <a class="btn btn-secondary me-2" href="{% url 'profesores:home' %}">Regresar</a>
     </div>
-
+</div>
 {% endblock contenido %}

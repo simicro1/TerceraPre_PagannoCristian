@@ -8,16 +8,16 @@
 <div style="border: 2px solid #000; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center;">
     <ul>
         <p></p>
-        <li>Nombre: {{ object.nombre }}</li>
-        <li><p>Comision:</p>
+        <p><b><u>Nombre del Curso:</u> {{ object.nombre }}</p></b>
+        <p><p><u>Comision Asignada:</p></u>
             {% for comision in object.comisiones.all %}
             <p>{{comision.nombre}} - {{comision.profesor}}</p>
             {% endfor %}
-        </li>
+        </p>
     </ul>
 
     <div class="fs-3 pb-4">
-        <a class="btn btn-secondary me-2" href="{% url 'cursos:home' %}">Volver</a>
+        <a class="btn btn-secondary me-2" href="{% url 'cursos:home' %}">Regresar</a>
     </div>
 </div>
 {% endblock contenido %}

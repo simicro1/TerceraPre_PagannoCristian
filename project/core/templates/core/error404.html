@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block titulo %}
+    {% include 'core/components/titulo1.html' with titulo="App Coder" %}
+{% endblock titulo %}
+{% block contenido %}
+    <!-- Heading Row-->
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-5">
+            <img class="img-fluid rounded mb-4 mb-lg-0"
+                 src="{% static 'core/img/404.webp' %}"
+                 alt="Home Page"
+                 width="100%" />
+        </div>
+        <div class="col-lg-7">
+            <h3 class="font-weight-light"></h3>
+            <p><h2>Contenido no Disponible</h2>
+                <p>Estamos trabajando en mejorar nuestros cursos para que puedas alcanzar tus metas.</p>
+                <p>¡Te Esperamos pronto!</p>
+            </p>
+        
+{% endblock contenido %}
