@@ -5,15 +5,18 @@
 {% endblock titulo %}
 
 {% block contenido %}
-    
+<p></p>
+<div style="border: 2px solid #000; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+    <h3 class="font-weight-light">Borrar un Curso</h3>
+    <p></p>
     <p class="fs-5 fst-italic">¿Confirma eliminar "{{ object.nombre }}"?</p>
 
     <form method="post">
         {% csrf_token %}
+        <p></p>
         <button type="submit" class="btn btn-danger">Confirmar</button>
+        <a class="btn btn-secondary me-2" href="{% url 'cursos:home' %}">Cancelar</a>
     </form>
-    <div class="fs-3 pb-4">
-        <a href="{% url 'cursos:home' %}">Volver al inicio de Curso</a>
-    </div>
+</div>
 
 {% endblock contenido %}
